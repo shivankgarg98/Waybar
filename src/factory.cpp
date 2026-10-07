@@ -11,6 +11,7 @@
 #include "modules/sway/language.hpp"
 #include "modules/sway/mode.hpp"
 #include "modules/sway/scratchpad.hpp"
+#include "modules/sway/tabs.hpp"
 #include "modules/sway/window.hpp"
 #include "modules/sway/workspaces.hpp"
 #endif
@@ -181,6 +182,14 @@ waybar::AModule* waybar::Factory::makeModule(const std::string& name,
     }
     if (ref == "sway/scratchpad") {
       return new waybar::modules::sway::Scratchpad(id, config_[name]);
+    }
+    if (ref == "sway/tabs") {
+      return new waybar::modules::sway::Tabs(id, bar_, config_[name],
+                                             waybar::modules::sway::Tabs::Mode::Tabs);
+    }
+    if (ref == "sway/away") {
+      return new waybar::modules::sway::Tabs(id, bar_, config_[name],
+                                             waybar::modules::sway::Tabs::Mode::Away);
     }
 #endif
 #ifdef HAVE_WLR_TASKBAR

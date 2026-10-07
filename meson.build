@@ -284,7 +284,8 @@ if true
         'src/modules/sway/language.cpp',
         'src/modules/sway/window.cpp',
         'src/modules/sway/workspaces.cpp',
-        'src/modules/sway/scratchpad.cpp'
+        'src/modules/sway/scratchpad.cpp',
+        'src/modules/sway/tabs.cpp'
     )
     man_files += files(
         'man/waybar-sway-language.5.scd',
